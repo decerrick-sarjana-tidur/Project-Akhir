@@ -1,0 +1,39 @@
+[project]
+name = "myvault-flet"
+version = "0.1.0"
+description = "MyVault Flet app"
+requires-python = ">=3.10"
+dependencies = [
+    "flet>=0.86.0,<1.0.0",
+    "flet-secure-storage==0.86.5",
+    "flet-reminders",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.flet]
+product = "MyVault"
+icon_background = "#0B0718"
+
+[tool.uv.sources]
+flet-reminders = { path = "flet_reminders_extension", editable = true }
+
+[tool.flet.app]
+path = "myvault"
+module = "main"
+
+[tool.flet.dev_packages]
+flet-reminders = "flet_reminders_extension"
+
+[tool.flet.android]
+min_sdk_version = 24
+
+[tool.flet.android.splash]
+color = "#0B0718"
+dark_color = "#0B0718"
+icon_background = "#15102B"
+
+[tool.flet.android.gradle_properties]
+"kotlin.incremental" = "false"
+"org.gradle.jvmargs" = "-Xmx2G -XX:MaxMetaspaceSize=1G -XX:ReservedCodeCacheSize=256m -XX:+HeapDumpOnOutOfMemoryError"
+"org.gradle.workers.max" = "2"
+"org.gradle.parallel" = "false"

@@ -1,0 +1,20 @@
+# Kredensial — jangan pernah di-commit
+.env
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Flet build output
+build/
+.flet/
+.gradle/
+
+# OS files
+.DS_Store
+Thumbs.db

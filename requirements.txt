@@ -1,0 +1,5 @@
+flet>=0.86.0,<1.0.0
+flet-secure-storage==0.86.5
+certifi>=2024.2.2
+python-dotenv>=1.0.0
+-e ./flet_reminders_extension

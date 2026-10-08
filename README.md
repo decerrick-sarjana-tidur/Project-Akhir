@@ -1,15 +1,61 @@
-# MyVault — Flet (Python) Prototype
+# MyVault
 
-Aplikasi celengan digital: tracking tabungan per "vault", progres % (donut +
-progress bar), notifikasi milestone (25/50/75/100%), link barang tujuan, dan
-statistik bulanan/kategori. Tema Dark Indigo + aksen brass.
+MyVault membantu mencatat target tabungan, setoran, penarikan, dan progres setiap rencana.
 
-Dibangun dengan [Flet](https://flet.dev) — Python yang dirender lewat mesin
-Flutter di baliknya.
+> **Penting:** MyVault adalah pencatat manual. Aplikasi tidak menyimpan atau memindahkan uang dan tidak terhubung ke rekening bank.
+
+## Panduan Pengguna APK
+
+### Memulai
+
+1. Instal APK MyVault dari sumber yang tepercaya, lalu buka aplikasinya.
+2. Masuk dengan Google atau email dan kata sandi. Untuk membuat akun email, pilih **Daftar**, isi nama, email, dan kata sandi minimal 6 karakter.
+3. Jika hanya ingin mencoba, pilih **Lanjutkan sebagai tamu**.
+
+Akun Google atau email memerlukan koneksi internet untuk memuat dan menyinkronkan vault. Mode tamu menggunakan data contoh dan data yang diubah di mode ini hanya tersimpan sementara di perangkat. Data tamu akan hilang saat aplikasi dimulai ulang, jadi jangan gunakan mode tamu untuk catatan penting.
+
+### Navigasi
+
+Gunakan navigasi di bagian bawah layar:
+
+- **Dashboard** menampilkan jumlah tabungan, progres gabungan, vault prioritas, dan aktivitas terbaru.
+- **Vault** menampilkan semua target tabungan. Ketuk vault untuk melihat detail.
+- **Statistik** menampilkan setoran bersih per bulan, tabungan per kategori, dan vault yang sudah selesai.
+- **Pengaturan** berisi pilihan mata uang, notifikasi, dan tombol keluar.
+
+### Membuat target tabungan
+
+1. Ketuk tombol **+**.
+2. Isi nama vault, kategori, target nominal, dan deadline.
+3. Tambahkan link barang tujuan jika diperlukan, lalu tandai sebagai prioritas bila ingin menampilkannya di Dashboard.
+4. Ketuk **Buat vault**.
+
+Vault baru dimulai dari saldo nol. Untuk membuka target, ketuk vault pada tab **Vault**. Detail menampilkan saldo, sisa target, deadline, saran setoran harian/mingguan, dan riwayat transaksi.
+
+### Mencatat setoran dan penarikan
+
+1. Buka detail vault.
+2. Pilih **Tambah saldo** untuk mencatat setoran atau **Tarik saldo** untuk mencatat penarikan.
+3. Masukkan nominal atau pilih nominal cepat, lalu konfirmasi.
+
+Penarikan tidak akan membuat saldo vault menjadi kurang dari nol. Setoran yang melewati 25%, 50%, 75%, atau 100% target dapat memunculkan notifikasi pencapaian jika notifikasi diizinkan.
+
+Di detail vault, ikon bintang mengatur prioritas, ikon bagikan membagikan detail, dan ikon tempat sampah menghapus vault. Pastikan vault yang dipilih benar sebelum mengonfirmasi penghapusan.
+
+### Pengaturan dan penyimpanan
+
+- **IDR/USD** mengubah format tampilan nominal. Pilihan USD memakai kurs tetap di aplikasi, bukan kurs pasar langsung.
+- **Notifikasi otomatis** menjadwalkan pengingat harian pukul 20.00.
+- **Jadwal kustom** meminta izin notifikasi lalu membuka pemilih waktu.
+- **Keluar** mengakhiri sesi akun. Untuk mode tamu, tombolnya kembali ke layar login.
+
+Vault pada akun tersimpan dan disinkronkan ke cloud. Jika akun pernah berhasil memuat data tetapi koneksi sedang bermasalah, aplikasi dapat membuka salinan lokal dalam mode baca-saja; perubahan baru tidak dapat disimpan sampai koneksi pulih. Mode tamu berbeda: datanya bukan salinan akun dan tidak bertahan setelah aplikasi dimulai ulang.
 
 ---
 
-## Menjalankan (tanpa cloud sync)
+## Untuk Pengembang
+
+### Menjalankan (tanpa cloud sync)
 
 ```bash
 pip install -r requirements.txt
